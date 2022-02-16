@@ -1,12 +1,15 @@
-python-logstash
-===============
+python-logstash-tradingstrategy
+===============================
 
-Python logging handler for Logstash.
-http://logstash.net/
+Python logging handler for `Logstash <git@github.com:tradingstrategy-ai/python-logstash.git>`_.
+
+This is a forked from the original `python-logstash project <git@github.com:vklochan/python-logstash.git>`_.
 
 Changelog
 =========
-TBA:
+
+0.5.0:
+  - Forked to have a release
   - Added ``extra_fields`` parameter to handler
 0.4.6
   - Updated field names to match java counterparts supported by logstash crew
