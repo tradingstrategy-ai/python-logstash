@@ -108,12 +108,14 @@ You can also pass extra fields to the handler, so that those fields will appear 
     # Pass `application` field and `tags` to Logstash
     # with every log message
     tags = ["python"]
+    extra_fields = {"application": "my_application_name}
     handler = logstash.UDPLogstashHandler(
         logstash_server,
         5959,
         version=1,
-        application="my_application_name",
-        tags=tags)
+        tags=tags,
+        extra_fields==extra_fields,
+        )
 
 
 Using with Django
