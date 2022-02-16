@@ -3,14 +3,17 @@ python-logstash-tradingstrategy
 
 Python logging handler for `Logstash <git@github.com:tradingstrategy-ai/python-logstash.git>`_.
 
-This is a forked from the original `python-logstash project <git@github.com:vklochan/python-logstash.git>`_.
+This is a forked from the original `python-logstash project <git@github.com:vklochan/python-logstash.git>`_
+for `Trading Strategy <https://tradingstrategy.ai>`_.
 
 Changelog
 =========
 
 0.5.0:
-  - Forked to have a release
+  - Forked to have a new release
   - Added ``extra_fields`` parameter to handler
+0.4.7
+  - Add couple of sensitive fields to the skip_list
 0.4.6
   - Updated field names to match java counterparts supported by logstash crew
 0.4.5
@@ -100,6 +103,18 @@ For example::
       test_logger.exception('python-logstash-logger: Exception with stack trace!')
 
 
+You can also pass extra fields to the handler, so that those fields will appear in Logstash::
+
+    # Pass `application` field and `tags` to Logstash
+    # with every log message
+    tags = ["python"]
+    handler = logstash.UDPLogstashHandler(
+        logstash_server,
+        5959,
+        version=1,
+        application="my_application_name",
+        tags=tags)
+
 
 Using with Django
 =================
@@ -134,14 +149,14 @@ Modify your ``settings.py`` to integrate ``python-logstash`` with Django's loggi
     ...
   }
 
-Note
-====
+Example Logstash Configuration
+==============================
 
 Example Logstash Configuration (``logstash.conf``) for Receiving Events from python-logstash is::
 
   input {
-    tcp {
-      port => 5000
+    udp {
+      port => 5959
       codec => json
     }
   }
@@ -150,3 +165,5 @@ Example Logstash Configuration (``logstash.conf``) for Receiving Events from pyt
       codec => rubydebug
     }
   }
+
+For TCP input you need to change the logstash's input to ``tcp`` and modify django log handler's class to ``logstash.TCPLogstashHandler``

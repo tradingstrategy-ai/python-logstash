@@ -1,13 +1,14 @@
 from distutils.core import setup
 setup(
-    name='python-logstash',
+    name='python-logstash-tradingstrategy',
     packages=['logstash'],
-    version='0.4.6',
-    description='Python logging handler for Logstash.',
+    version='0.5.0',
+    description='Python logging handler for Logstash (forked).',
     long_description=open('README.rst').read(),
-    author='Volodymyr Klochan',
-    author_email='vklochan@gmail.com',
-    url='https://github.com/vklochan/python-logstash',
+    license='MIT',
+    author='Mikko Ohtamaa',
+    author_email='mikko@capitalgram.com',
+    url='https://github.com/tradingstrategy-ai/python-logstash/',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
