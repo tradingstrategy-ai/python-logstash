@@ -3,8 +3,9 @@ python-logstash-tradingstrategy
 
 Python logging handler for `Logstash <git@github.com:tradingstrategy-ai/python-logstash.git>`_.
 
-This is a forked from the original `python-logstash project <git@github.com:vklochan/python-logstash.git>`_
-for `Trading Strategy <https://tradingstrategy.ai>`_.
+**Note**: This is a forked from the original `python-logstash project <git@github.com:vklochan/python-logstash.git>`_
+for `Trading Strategy <https://tradingstrategy.ai>`_. It has been updated and modified with
+some patches for advanced functionality.
 
 Changelog
 =========
