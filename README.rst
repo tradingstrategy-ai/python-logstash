@@ -10,6 +10,9 @@ some patches for advanced functionality.
 Changelog
 =========
 
+0.5.1:
+  - Bette exception message if LogStash formatter has problems to make the message out as JSON,
+    to give a clue what could be wrong
 0.5.0:
   - Forked to have a new release
   - Added ``extra_fields`` parameter to handler

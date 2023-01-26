@@ -120,7 +120,10 @@ class LogstashFormatterVersion0(LogstashFormatterBase):
         if record.exc_info:
             message['@fields'].update(self.get_debug_fields(record))
 
-        return self.serialize(message)
+        try:
+            return self.serialize(message)
+        except Exception as e:
+            raise RuntimeError(f"Could not serialize as LogStash message: {message}") from e
 
 
 class LogstashFormatterVersion1(LogstashFormatterBase):
@@ -148,4 +151,8 @@ class LogstashFormatterVersion1(LogstashFormatterBase):
         if record.exc_info:
             message.update(self.get_debug_fields(record))
 
-        return self.serialize(message)
+        try:
+            return self.serialize(message)
+        except Exception as e:
+            raise RuntimeError(f"Could not serialize as LogStash message: {message}") from e
+
