@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
     name='python-logstash-tradingstrategy',
     packages=['logstash'],
-    version='0.5.0',
+    version='0.5.1',
     description='Python logging handler for Logstash (forked).',
     long_description=open('README.rst').read(),
     license='MIT',
