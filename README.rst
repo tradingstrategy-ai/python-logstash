@@ -173,3 +173,16 @@ Example Logstash Configuration (``logstash.conf``) for Receiving Events from pyt
   }
 
 For TCP input you need to change the logstash's input to ``tcp`` and modify django log handler's class to ``logstash.TCPLogstashHandler``
+
+Release
+=======
+
+.. code-block:: shell
+
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install setuptools twine
+    python setup.py sdist
+    twine upload
+    twine upload dist/*
+
