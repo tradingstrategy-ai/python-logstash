@@ -46,14 +46,9 @@ class AMQPLogstashHandler(SocketHandler, object):
     def __init__(self, host='localhost', port=5672, username='guest',
                  password='guest', exchange='logstash', exchange_type='fanout',
                  virtual_host='/', message_type='logstash', tags=None,
-<<<<<<< HEAD
                  durable=False, version=0, extra_fields=True, fqdn=False,
                  facility=None, exchange_routing_key='', **kwargs):
-=======
-                 durable=False, passive=False, version=0, extra_fields=True,
-                 fqdn=False, facility=None, exchange_routing_key=''):
 
->>>>>>> 7bd98c049533b101c2357c38135f21aaa441ebb3
 
         # AMQP parameters
         self.host = host
